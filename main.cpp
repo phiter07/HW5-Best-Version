@@ -52,8 +52,7 @@ int main() {
   std::cout << std::endl;
   
 
-  //k = {"Kobe", "Balls", "Jenkins", "Leeroy", "Ligma", "Bryant"};
-  k = {"Jared", "dora", "Jace", "Sam", "eichler"};
+  k = {"Kobe", "Balls", "Jenkins", "Leeroy", "Ligma", "Bryant"};
   MergeSort(k);
   std::cout << "Case 3: MergeSort " << std::endl;
   print(k);
