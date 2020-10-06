@@ -30,9 +30,32 @@
     initialize i to low
     initialize j to mid + 1 
     initialize k to low
+  while i is <= mid and j is <= high
+    if vec[i] is less than vec[j]
+      assign temporay[k++] to vec[in++]
+    else
+      assign temporary[k++] to vec[j++]
+  while i is <= mid
+    assign temporary[k++] to vec[i++]
+  while j is <= high
+    assign temporary[k++] to vec[j++]
+  for i is = to low and i is <= high
+    temporary assign vec[i] to temp[i]
 
 
+  void MergeSortHelper(vector<string> &vec,int low, int high)
+    set middle as an int
+      if low is >= to high
+        return
+    set middle = to the sum of low and high divided by 2
+    Call the function MergeSortHelper(vec, low, middle)
+    Call the function MergeSortHelper(vec, middle + 1, high)
+    Call the function Merge(vec, low, high)
   
+
+  void MergeSort(vector<string>, &vec)
+    initialize n to vec.size
+    Call the function MergeSortHelper(vec,0,n-1)
 ***/
 
 #include <iostream>
@@ -100,12 +123,12 @@ void Merge(std::vector<std::string> &vec, int low, int high) {
 void MergeSortHelper(std::vector<std::string> &vec,int low, int high) {
   int middle;
     if (low >= high)
-    return;
+      return;
 
-    middle = (low + high) / 2;
-    MergeSortHelper(vec, low, middle);
-    MergeSortHelper(vec, middle + 1, high);
-    Merge(vec, low, high); 
+  middle = (low + high) / 2;
+  MergeSortHelper(vec, low, middle);
+  MergeSortHelper(vec, middle + 1, high);
+  Merge(vec, low, high); 
 }
 
 void MergeSort(std::vector<std::string> &vec) {
