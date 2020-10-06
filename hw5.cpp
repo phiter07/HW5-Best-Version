@@ -83,24 +83,30 @@ void Merge(std::vector<std::string> &vec, int low, int high) {
   std::vector<std::string> temp(vec.size());
 
   while(i <= mid && j <= high) {
-    if(vec[i] < vec[j]) 
+    if(vec[i] < vec[j]) {
       temp[k++] = vec[i++];
-    else 
-      temp[k++] = vec[i++];
+    }
+    else {
+      temp[k++] = vec[j++];
+    }
   }
   
-  while(i <= mid) 
+  while(i <= mid) { 
     temp[k++] = vec[i++];
-  while(j <= high) 
+  }
+  while(j <= high) {
     temp[k++] = vec[j++];
-  for(int i = low; i <= high; i++) 
+  }
+  for(int i = low; i <= high; i++) { 
     vec[i]= temp[i];
+  }
 }
 
 void MergeSortHelper(std::vector<std::string> &vec,int low, int high) {
   int middle;
-    if (low >= high)
+    if (low >= high) {
     return;
+    }
 
     middle = (low + high) / 2;
     MergeSortHelper(vec, low, middle);
